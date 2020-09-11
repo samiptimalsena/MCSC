@@ -24,7 +24,7 @@ a=0
 b=-1
 def function(x):
     return 2*x*math.cos(2*x)-(x+1)**2
-method=BisectionMethod(a,b,fun_bisect)
+method=BisectionMethod(a,b,function)
 steps,table=method.calc()
 print(table)
 ```
