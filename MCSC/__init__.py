@@ -1,0 +1,6 @@
+from MCSC.BisectionMethod import BisectionMethod
+from MCSC.FalsePostionMethod import FalsePostionMethod
+from MCSC.IterationMethod import IterationMethod,JacobiMethod,GaussSeidelMethod
+from MCSC.NewtonRaphsonMethod import NewtonRaphsonMethod,GeneralizedNewtonRaphsonMethod,NewtonMethodForSystem
+from MCSC.SecantMethod import SecantMethod
+from MCSC.ThomasAlgorithm import ThomasAlgorithm

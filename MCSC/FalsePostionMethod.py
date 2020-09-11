@@ -1,12 +1,12 @@
 from prettytable import PrettyTable
 
 class FalsePostionMethod:
-    def __init__(self,a,b,function_fpmethod,range=20,tolerance=0.00005):
-        self.a=a
+    def __init__(self,initial_approx,b,function_fpmethod,steps=20,tolerance=0.00005):
+        self.a=initial_approx
         self.b=b
         self.function=function_fpmethod
         self.tolerance=tolerance
-        self.range=range
+        self.steps=steps
         self.table=PrettyTable(['n','a','b','x','f(x)'])
 
     def __repr__(self):
@@ -14,7 +14,7 @@ class FalsePostionMethod:
 
     def calc(self):
         a,b=self.a,self.b  
-        for i in range(self.range):    
+        for i in range(self.steps):    
             x=(a*self.function(b)-b*self.function(a))/(self.function(b)-self.function(a))
             self.table.add_row([i+1,a,b,round(x,4),round(self.function(x),4)])
             if self.function(x)*self.function(a)<0:

@@ -2,12 +2,12 @@ from prettytable import PrettyTable
 import math
 
 class NewtonRaphsonMethod:
-    def __init__(self,a,function,derivative_function,range=20,tolerance=0.00005):
-        self.a=a
+    def __init__(self,initial_approx,function,derivative_function,steps=20,tolerance=0.00005):
+        self.a=initial_approx
         self.function=function
         self.derivative_function=derivative_function
         self.tolerance=tolerance
-        self.range=range
+        self.steps.steps
         self.table=PrettyTable(['n','a','x'])
 
     def __repr__(self):
@@ -15,7 +15,7 @@ class NewtonRaphsonMethod:
 
     def calc(self):
         a=self.a
-        for i in range(self.range):   
+        for i in range(self.steps):   
             x=a-(self.function(a)/self.derivative_function(a))
             self.table.add_row([i+1,a,round(x,4)])
             a=round(x,4)
@@ -26,8 +26,8 @@ class NewtonRaphsonMethod:
 
 
 class GeneralizedNewtonRaphsonMethod(NewtonRaphsonMethod):
-    def __init__(self,a,function,derivative_function,repeated_roots,range=20,tolerance=0.00005):
-        super().__init__(a,function,derivative_function)
+    def __init__(self,initial_approx,function,derivative_function,repeated_roots,range=20,tolerance=0.00005):
+        super().__init__(initial_approx,function,derivative_function)
         self.repeated_roots=repeated_roots
     
     def __repr__(self):
@@ -35,7 +35,7 @@ class GeneralizedNewtonRaphsonMethod(NewtonRaphsonMethod):
 
     def calc(self):
         a=self.a
-        for i in range(self.range):        
+        for i in range(self.steps):        
             x=a-self.repeated_roots*(self.function(a)/self.derivative_function(a))
             self.table.add_row([i+1,a,round(x,4)])
             a=round(x,4)
