@@ -7,7 +7,7 @@ class NewtonRaphsonMethod:
         self.function=function
         self.derivative_function=derivative_function
         self.tolerance=tolerance
-        self.steps.steps
+        self.steps=steps
         self.table=PrettyTable(['n','a','x'])
 
     def __repr__(self):
@@ -76,7 +76,7 @@ class NewtonMethodForSystem:
                                 round(D_2,4),round(h,4),round(k,3)])
             x=x+h
             y=y+k
-            if round(abs(self.main_functions[0](x,y)),5)<0.00005 and round(abs(self.main_functions[1](x,y)))<0.00005:
+            if round(abs(self.main_functions[0](x,y)),5)<self.tolerance and round(abs(self.main_functions[1](x,y)))<self.tolerance:
                 break
 
         return self.table
