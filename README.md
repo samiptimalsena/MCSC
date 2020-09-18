@@ -1,13 +1,14 @@
 # MCSC
 
-MCSC is a package for solving numerical methods problems. Currently only root-finding algorithms are available such as:-
+MCSC is a package for solving numerical methods problems. 
 
   - Bisection Method
   - Fase Position Method
   - Secant Method
   - Iteration Method -> Gauss Seidel and Jacobi Method
-  - Newton Raphson Mehod -> Generalized as well as for system of non linear equations.
+  - Newton Raphson Mehod -> Generalized as well as for system of equations.
   - Thomas Algorithm
+  - Interpolation
 
 ### Installation
 
@@ -60,7 +61,17 @@ method=JacobiMethod([0,0,0],[fun_1,fun_2,fun_3,fun_x,fun_y,fun_z])
 print(method.calc())
 ```
 
-Run the sample.py file in similar way as above.
+For interpolation, you just pass the given values during initialization. 
+```sh
+from MCSC.Interpolate import Interpolate
+
+method = Interpolate([(-1,3), (0,-6), (3,39), (6, 822), (7, 1611)])
+value = method.calc(5)
+equation = method.find_eq()
+
+print(f"The value at 5 is: {value}")
+print(f"The required equation is: {equation}")
+```
 
 For more demo: https://colab.research.google.com/drive/1VNU87u1W1PPsTf0qgY5z0gxB6tX5KHdy?usp=sharing
 
