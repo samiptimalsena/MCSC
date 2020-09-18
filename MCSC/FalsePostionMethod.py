@@ -1,7 +1,7 @@
 from prettytable import PrettyTable
 
 class FalsePostionMethod:
-    def __init__(self,initial_approx,b,function_fpmethod,steps=20,tolerance=0.00005):
+    def __init__(self,initial_approx,b,function_fpmethod,steps=30,tolerance=0.00005):
         self.a=initial_approx
         self.b=b
         self.function=function_fpmethod

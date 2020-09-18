@@ -2,7 +2,7 @@ from prettytable import PrettyTable
 import math
 
 class NewtonRaphsonMethod:
-    def __init__(self,initial_approx,function,derivative_function,steps=20,tolerance=0.00005):
+    def __init__(self,initial_approx,function,derivative_function,steps=30,tolerance=0.00005):
         self.a=initial_approx
         self.function=function
         self.derivative_function=derivative_function
@@ -26,8 +26,8 @@ class NewtonRaphsonMethod:
 
 
 class GeneralizedNewtonRaphsonMethod(NewtonRaphsonMethod):
-    def __init__(self,initial_approx,function,derivative_function,repeated_roots,range=20,tolerance=0.00005):
-        super().__init__(initial_approx,function,derivative_function)
+    def __init__(self,initial_approx,function,derivative_function,repeated_roots,steps=30,tolerance=0.00005):
+        super().__init__(initial_approx,function,derivative_function,steps)
         self.repeated_roots=repeated_roots
     
     def __repr__(self):
