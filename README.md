@@ -62,6 +62,8 @@ print(method.calc())
 
 Run the sample.py file in similar way as above.
 
+For more demo: https://colab.research.google.com/drive/1VNU87u1W1PPsTf0qgY5z0gxB6tX5KHdy?usp=sharing
+
 
 License
 ----
